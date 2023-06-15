@@ -26,4 +26,8 @@ public class ReportController {
     public ResponseEntity<?> getReportByCategory(@PathVariable String category){
         return ResponseEntity.ok(reportService.viewReportByCategory(category));
     }
+    @DeleteMapping("delete-report/{reportId}")
+    public ResponseEntity<?> deleteReport(@PathVariable Long reportId){
+        return ResponseEntity.ok(reportService.deleteReport(reportId));
+    }
 }
